@@ -128,21 +128,21 @@
       }
     });
 
-   // When the form is submitted, save the URL and load the iframe
-document.getElementById('iframeForm').addEventListener('submit', function (e) {
-  e.preventDefault();
+    // When the form is submitted, save the URL and load the iframe
+    document.getElementById('iframeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-  var iframeURL = 'https://www.chatbase.co/chatbot-iframe/' + document.getElementById('iframeURL').value;
-  chrome.storage.sync.set({ iframeURL: iframeURL }, function () {
-    loadIframe(iframeURL);
-  });
+      const iframeURL = 'https://www.chatbase.co/chatbot-iframe/' + document.getElementById('iframeURL').value;
+      chrome.storage.sync.set({ iframeURL: iframeURL }, function () {
+        loadIframe(iframeURL);
+      });
 
-  // Hide the form and show the change URL button
-  document.getElementById('iframeForm').style.display = 'none';
-  document.getElementById('consenttagline').style.display = 'none';
-  document.getElementById('consent').style.display = 'none';
-  document.getElementById('changeURLButton').style.display = 'block';
-});
+      // Hide the form and show the change URL button
+      document.getElementById('iframeForm').style.display = 'none';
+      document.getElementById('consenttagline').style.display = 'none';
+      document.getElementById('consent').style.display = 'none';
+      document.getElementById('changeURLButton').style.display = 'block';
+    });
 
     // When the change URL button is clicked, show the form and hide the button
     document.getElementById('changeURLButton').addEventListener('click', function () {
@@ -155,11 +155,11 @@ document.getElementById('iframeForm').addEventListener('submit', function (e) {
 
     // Function to load the iframe
     function loadIframe(iframeURL) {
-      var iframeContainer = document.getElementById('iframeContainer');
+      const iframeContainer = document.getElementById('iframeContainer');
 
       // Clear the container and create a new iframe
       iframeContainer.innerHTML = '';
-      var iframe = document.createElement('iframe');
+      const iframe = document.createElement('iframe');
       iframe.src = iframeURL;
       iframe.style.width = '100%';
       iframe.style.height = '100%';
