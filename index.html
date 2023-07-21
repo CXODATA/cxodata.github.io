@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 600px;
+      height: 600px;
+      overflow: hidden;
+      margin: 0px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      background-color: #F6F6F6;
+      min-height: 32px;
+    }
+    li a {
+      display: block;
+      float: left;
+      min-width: 150px;
+      height: 32px;
+      color: #333;
+      text-decoration: none;
+      line-height: 2rem;
+      text-align: center;
+    }
+    li a:hover {
+      background-color: #ccc;
+      min-width: 150px;
+      height: 32px;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+    #iframeForm {
+      padding: 10px;
+    }
+    #iframeContainer {
+      width: 100%;
+      height: 510px;
+      display: none;
+      overflow: hidden;
+    }
+    #changeURLButton {
+      display: none;
+    }
+    menu {
+    margin-block: 0px;
+    padding-inline-start: 0px!important;
+    }
+    iframe {
+      width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: none;
+    }
+    a.disabled {color:grey; text-decoration: none; }
+    li a:hover.disabled {
+      background-color: #F6F6F6;
+      min-width: 150px;
+      height: 32px;
+    }
+  </style>
+</head>
+<body><header style="padding:8px;">
+  <a href="/" rel="home" class="site-logo">
+    <img src="https://orangevalley.nl/themes/custom/orangevalley/logo.svg" alt="Home" style="height: 20px">
+  </a><button id="changeURLButton" style="display:block;float:right;">Insert key</button>
+  
+</header>
+<menu id="menu">
+  <ul>
+    <li><a id="chatButton"  href="#"><b>Insight</b>Pilot</a></li>
+    <li><a id="cxoDashboardButton" href="#">CXO Dashboard</a></li>
+    <li><a target="_blank" class="disabled" href="https://ajax474005.monday.com/boards/3741554184/views/84784939">Planning</a></li>
+    <li><a target="_blank" class="disabled" href="https://forms.monday.com/forms/049e7be6a10a964c2657182a5faa3077?r=use1">Upload new idea</a></li>
+  </ul></menu>
+  <div id="consent" style="color:#ccc;height:200px;overflow-y: scroll;margin:10px;border:1px solid #ccc;"><h4>General agreement</h4><p>This Non-Disclosure Agreement (the "Agreement") is entered into between The Social Hub ("Client"), Chatbase ("SAAS Provider"), and OrangeValley ("Consultancy Agency") collectively referred to as the "Parties" and individually as a "Party."
+    Thank you for using our Chrome plugin! We want to inform you about the data storage practices associated with our plugin. By installing and using our plugin, you hereby provide your consent for the storage of data on Chatbase, subject to the terms outlined below.
+    <br /><b>Data Collection and Storage:
+    Our Chrome plugin collects and stores certain data to enhance your experience and improve our services. This data includes but is not limited to:
+    <br /><b>Usage information:</b> We collect data on how you interact with the plugin, such as the features you use, settings you modify, and the frequency and duration of your usage.
+    <br /><b>Device information:</b> We may collect information about your device, such as its operating system, browser version, and IP address, to ensure compatibility and provide support.
+    <br /><b>Error logs:</b> In the event of plugin crashes or errors, we may collect error logs to diagnose and address technical issues.
+    <br /><b>Purpose of Data Storage:</b>
+    The data collected and stored on Chatbase is used for the following purposes:
+    Improving our services:</b> We analyze the collected data to identify areas of improvement, develop new features, and enhance the overall functionality of the plugin.
+    <br /><b>User support:</b> The data assists our support team in resolving issues, providing timely assistance, and delivering a better user experience.
+    <br /><b>Data Security:</b>
+    We take your data security seriously. We implement industry-standard security measures to protect the data stored on Chatbase, including encryption and access controls, to prevent unauthorized access, disclosure, alteration, or destruction of your data.
+    <br /><b></b>Data Retention:
+    We retain your data for as long as necessary to fulfill the purposes outlined in this agreement, or as required by applicable laws and regulations. However, we do not retain any personally identifiable information (PII) without your explicit consent.
+    <br /><b>Third-Party Access:</b>
+    To provide our services effectively, we may engage trusted third-party service providers who have access to the data stored on Chatbase. These service providers are bound by confidentiality agreements and are only permitted to access and use the data for the purposes outlined in this agreement.
+    <br /><b>Data Sharing:</b>
+    We do not sell, rent, or lease your data to any third parties for marketing purposes. Your data is shared with third parties only when necessary to comply with legal obligations or enforce our rights and agreements.
+    <br /><b>Consent and Opt-Out:</b>
+    By installing and using our Chrome plugin, you acknowledge and consent to the data storage practices outlined in this agreement. If you do not agree with these practices, please uninstall the plugin from your browser.
+    <br /><b>Updates to the Agreement:</b>
+    We reserve the right to update or modify this agreement at any time. In the event of significant changes, we will notify you through the plugin or other means to seek your renewed consent if required by applicable laws.
+    If you have any questions or concerns regarding our data storage practices on Chatbase, please contact us</p></div>
+    <form id="iframeForm">
+      <input type="text" id="iframeURL" placeholder="Enter chat Key">
+      <input type="submit" value="Load">
+      <div id="consenttagline" style="color:#666"> By submitting your key you agree to the general agreement</div>
+    </form>
+   
+ 
+  <div id="iframeContainer"></div>
+  <div style="display: block;background-color: white;color: darkgray;position: absolute;bottom: 0px;height: 44px;width: 100%;text-align: center;"><a target="_blank" href="https://orangevalley.nl/" style="color:#5f5f5f!important">About OrangeValley</a></div>
+  <script type="module" src="action.js"></script>
+</body>
+</html>
